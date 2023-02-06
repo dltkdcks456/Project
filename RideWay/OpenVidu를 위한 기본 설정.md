@@ -15,3 +15,7 @@ https://jiwondh.github.io/2018/08/08/maven-install/
 - Openvidu git hub 클론
 
 https://docs.openvidu.io/en/2.25.0/tutorials/openvidu-hello-world/
+
+- MVN git bash에 적용하기
+
+https://engineer-diary.tistory.com/86

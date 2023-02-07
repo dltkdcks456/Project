@@ -140,18 +140,26 @@ public class testController {
 - `rm -rf 파일명` 은 파일 삭제할 시 사용
 - `ps -ef | grep java` 자바가 사용되는지 확인할 때 사용
 - `sudo netstat -ltup` 현재 사용하고 있는 포트에 대해 알려준다
-- `furge -k 8080/tcp` 를 활용해서 현재 사용되는 포트를 꺼준다.
+- `fuser -k 8080/tcp` 를 활용해서 현재 사용되는 포트를 꺼준다.
 
 ![image-20230206222609436](assets/image-20230206222609436.png)
 
 - NodeJS를 사용하기 위해서 해당 내용 체크해준다.
 
+### ✅Build Steps
+
+- Jenkins에게 파일을 지울 권한을 주어야 한다.
+  - https://hyunmin1906.tistory.com/282
+- 미리 기존 파일들을 지우고 빌드를 진행하자.
+
 ```jsx
+sudo rm -rf /home/ubuntu/jenkins/build/*
 cd /var/lib/jenkins/workspace/rideway/frontend
 npm install --legacy-peer-deps
 CI=false
 npm run build
 
+sudo rm -rf /home/ubuntu/jenkins/demo-1-0.0.1-SNAPSHOT.jar
 export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 export PATH="$PATH:$JAVA_HOME/bin"
 cd /var/lib/jenkins/workspace/rideway/backend/demo-1
@@ -169,4 +177,13 @@ nohup java -jar /home/ubuntu/jenkins/demo-1-0.0.1-SNAPSHOT.jar &
 ```
 
 - 프런트와 백이 빌드했을 때 폴더를 가져와서 실행시킨다.
-- SSH Publisher를 사용하려고 했으나 동작하지 않음 → 추후 확인 필요!!!📌
+- SSH Publisher를 사용하려고 했으나 동작하지 않음 → 추후 확인 필요!!!📌 -> 경로가 잘못되어 있었다 해결완료(✅)
+  - ubuntu 계정의 경로가 아닌 jenkins에 설정해준 Remote Directory가 상대경로의 기준이었다.
+
+![image-20230207132343284](assets/image-20230207132343284.png)
+
+![image-20230207132353410](assets/image-20230207132353410.png)
+
+- 기준
+
+![image-20230207132451599](assets/image-20230207132451599.png)

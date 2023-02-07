@@ -187,3 +187,13 @@ nohup java -jar /home/ubuntu/jenkins/demo-1-0.0.1-SNAPSHOT.jar &
 - 기준
 
 ![image-20230207132451599](assets/image-20230207132451599.png)
+
+
+
+### KAKAO MAP API
+
+- `.env` 파일은 `github`에 올라가지 않기 때문에 EC2에 따로 `.env`파일을 만들고 복사해서 넣어주고 빌드해주는 방식으로 변경하였다.
+
+![image-20230207143048976](assets/image-20230207143048976.png)
+
+> 잘 작동한다.

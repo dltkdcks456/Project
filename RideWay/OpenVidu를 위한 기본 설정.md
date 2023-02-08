@@ -19,3 +19,7 @@ https://docs.openvidu.io/en/2.25.0/tutorials/openvidu-hello-world/
 - MVN git bash에 적용하기
 
 https://engineer-diary.tistory.com/86
+
+- 배포 사이트
+
+https://docs.openvidu.io/en/2.25.0/deployment/ce/on-premises/

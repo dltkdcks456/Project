@@ -23,3 +23,6 @@ https://engineer-diary.tistory.com/86
 - 배포 사이트
 
 https://docs.openvidu.io/en/2.25.0/deployment/ce/on-premises/
+
+- class는 함수형과 완전 다르게 진행해야 함
+  - Redux설정 또한 새롭게 설정
